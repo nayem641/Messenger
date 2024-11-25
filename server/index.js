@@ -1,5 +1,6 @@
 const express = require("express")
 const authRouter = require("./routes/auth.route")
+const messageRoute = require("./routes/message.route")
 require("dotenv").config()
 
 const app = express()
@@ -10,6 +11,12 @@ app.use(express.urlencoded({extended: true}))
 require("./helper/db")
 
 app.use("/api/auth", authRouter)
+app.use("/api/message",messageRoute)
+
+
+
+
+
 //client error handler
 app.use((req, res, next) => {
     const error = new Error("Not Found")

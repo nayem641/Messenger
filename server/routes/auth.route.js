@@ -7,7 +7,7 @@ authRouter.post("/signup",SignUp)
 
 authRouter.post("/login",Login)
 authRouter.post("/logout",Logout)
-authRouter.post("/update-profile",protectRoute,UpdateProfile)
+authRouter.put("/update-profile",protectRoute,UpdateProfile)
 
 authRouter.get("/check",protectRoute,CheckAuth)
 
